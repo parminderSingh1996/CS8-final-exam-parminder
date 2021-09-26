@@ -26,7 +26,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Run tests
       run: |
-        python -m tests/mcit_test.py
+        python -m unittest
         
     - uses: akhileshns/heroku-deploy@v3.12.12
       with:
