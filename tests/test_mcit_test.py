@@ -2,10 +2,14 @@ import unittest
 from unittest.main import main
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.chrome.options import Options
+
+options = Options()
+options.add_argument('headless')
 
 class ChromeSearch(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Chrome()
+        self.driver = webdriver.Chrome(options=options)
         self.driver.implicitly_wait(10)
 
     def test_mcit(self):
